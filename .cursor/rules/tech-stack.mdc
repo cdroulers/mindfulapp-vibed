@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Tech Stack
+
+## Frontend
+
+- React JS
+- Offline first (Service worker)
+- PouchDB for local data
+- Mantine as the UI toolkit

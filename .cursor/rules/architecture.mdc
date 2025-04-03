@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Architecture
+
+The app should use vertical, clean architecture.
+
+## Frontend
+
+The frontend should be in a folder called `frontend`. It should use vertical slices to separate features.
