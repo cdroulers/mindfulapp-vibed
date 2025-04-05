@@ -3,11 +3,6 @@ description:
 globs: 
 alwaysApply: false
 ---
----
-description: 
-globs: 
-alwaysApply: true
----
 # Architecture
 
 The app should use vertical, clean architecture.
