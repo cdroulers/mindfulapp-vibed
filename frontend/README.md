@@ -21,11 +21,13 @@ An offline-first web application for daily mood journaling using ReactJS, Servic
 ## Getting Started
 
 1. Install dependencies:
+
    ```bash
    npm install
    ```
 
 2. Start development server:
+
    ```bash
    npm run dev
    ```
@@ -66,4 +68,4 @@ npm run test
 
 ## License
 
-MIT 
+MIT

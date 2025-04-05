@@ -1,4 +1,4 @@
-export type PrimaryMood = 'Good' | 'Neutral' | 'Bad';
+export type PrimaryMood = "Good" | "Neutral" | "Bad";
 
 export type SecondaryMood = {
   Good: string[];
@@ -19,4 +19,4 @@ export interface JournalEntry {
   };
   createdAt: string;
   updatedAt: string;
-} 
+}

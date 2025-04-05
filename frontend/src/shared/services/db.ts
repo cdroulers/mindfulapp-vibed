@@ -1,19 +1,19 @@
-import PouchDB from 'pouchdb-browser';
-import { JournalEntry } from '../types/journal';
+import PouchDB from "pouchdb-browser";
+import { JournalEntry } from "../types/journal";
 
-const db = new PouchDB<JournalEntry>('journal_db');
+const db = new PouchDB<JournalEntry>("journal_db");
 
 export const journalDB = {
   async getAll(): Promise<JournalEntry[]> {
     const result = await db.allDocs({ include_docs: true });
-    return result.rows.map(row => row.doc as JournalEntry);
+    return result.rows.map((row) => row.doc as JournalEntry);
   },
 
   async get(id: string): Promise<JournalEntry> {
     return await db.get(id);
   },
 
-  async create(entry: Omit<JournalEntry, 'id' | 'createdAt' | 'updatedAt'>): Promise<JournalEntry> {
+  async create(entry: Omit<JournalEntry, "id" | "createdAt" | "updatedAt">): Promise<JournalEntry> {
     const timestamp = new Date().toISOString();
     const newEntry: JournalEntry = {
       ...entry,
@@ -40,4 +40,4 @@ export const journalDB = {
     const doc = await db.get(id);
     await db.remove(doc);
   },
-}; 
+};
