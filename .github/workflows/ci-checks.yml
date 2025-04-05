@@ -21,7 +21,7 @@ jobs:
 
       - name: Read Node.js version from package.json
         id: node-version
-        run: echo "::set-output name=NODE_VERSION::$(node -p "require('./frontend/package.json').volta.node")"
+        run: echo "::set-output name=NODE_VERSION::$(node -p "require('./package.json').volta.node")"
         shell: bash
 
       - name: Set up Node.js
