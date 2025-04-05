@@ -4,5 +4,5 @@ test("homepage has correct title", async ({ page }) => {
   await page.goto("/");
 
   // Expect the main heading to be visible.
-  await expect(page.locator("div").filter({ hasText: "Daily Journal App" }).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Mindful App" })).toBeVisible();
 });
