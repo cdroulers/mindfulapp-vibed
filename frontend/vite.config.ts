@@ -17,11 +17,14 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 3333,
     open: true,
   },
   build: {
     outDir: "dist",
     sourcemap: true,
+  },
+  define: {
+    "process.env.ENABLE_SW": JSON.stringify(process.env.ENABLE_SW || "false"),
   },
 });

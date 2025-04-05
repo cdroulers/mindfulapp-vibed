@@ -5,8 +5,8 @@ import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/dates/styles.css";
 
-// Register service worker
-if ("serviceWorker" in navigator) {
+// Register service worker if enabled
+if ("serviceWorker" in navigator && process.env.ENABLE_SW === "true") {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("/sw.js")
