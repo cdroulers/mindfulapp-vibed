@@ -21,7 +21,9 @@ jobs:
 
       - name: Read Node.js version from package.json
         id: node-version
-        run: echo "NODE_VERSION=$(node -p \"require('./package.json').volta.node\")" >> $GITHUB_OUTPUT
+        run: |
+          NODE_VERSION_OUTPUT=$(node -p "require('./package.json').volta.node")
+          echo "NODE_VERSION=${NODE_VERSION_OUTPUT}" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Set up Node.js
