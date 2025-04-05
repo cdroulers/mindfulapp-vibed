@@ -34,3 +34,10 @@ dist-ssr
 # PouchDB
 *.sqlite
 *.sqlite-journal 
+
+# Playwright
+test-results
+playwright-report
+
+# Jest
+coverage
