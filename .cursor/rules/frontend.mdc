@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Frontend development rules
+
+## Convention
+
+- Avoid default exports. Always use named exports.
+
+## Unit tests
+
+- Make sure to add unit tests with @testing-library/react.
+- Use `userEvent` for actions.
+- Avoid jest mocking if possible.
