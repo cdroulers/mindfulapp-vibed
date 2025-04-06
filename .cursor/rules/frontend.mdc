@@ -14,3 +14,8 @@ alwaysApply: true
 - Make sure to add unit tests with @testing-library/react.
 - Use `userEvent` for actions.
 - Avoid jest mocking if possible.
+
+## e2e tests
+
+- Use Playwright for end-to-end tests
+- Use `npm run test:e2e:agent` as the base command when running the tests.

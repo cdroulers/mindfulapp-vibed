@@ -39,7 +39,7 @@ export function AppContent() {
             onClick={handleToggle}
             size="lg"
             title="Toggle color scheme (Light/Dark/Auto)">
-            <Icon size="1.2rem" />
+            <Icon size="1.2rem" data-testid={`theme-icon-${explicitPreference}`} />
           </ActionIcon>
         </Group>
       </AppShell.Header>
