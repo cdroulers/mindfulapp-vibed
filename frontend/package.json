@@ -18,7 +18,8 @@
     "preview": "vite preview",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "test": "jest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:agent": "playwright test --project=chromium --reporter=null"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
