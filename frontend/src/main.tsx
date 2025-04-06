@@ -4,6 +4,8 @@ import { App } from "./App";
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import "@mantine/dates/styles.css";
+import "./index.css";
+import "./i18n/config";
 
 // Register service worker if enabled
 if ("serviceWorker" in navigator && process.env.ENABLE_SW === "true") {

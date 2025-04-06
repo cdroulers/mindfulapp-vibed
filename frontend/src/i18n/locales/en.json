@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Mindful App",
+    "theme": {
+      "toggle": "Toggle color scheme (Light/Dark/Auto)"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry"
+  },
+  "journal": {
+    "create": "Create New Entry",
+    "edit": "Edit Entry",
+    "mood": {
+      "primary": {
+        "label": "How are you feeling?",
+        "good": "Good",
+        "neutral": "Neutral",
+        "bad": "Bad"
+      },
+      "secondary": {
+        "good": {
+          "excited": "Excited",
+          "energetic": "Energetic",
+          "joyful": "Joyful",
+          "proud": "Proud",
+          "happy": "Happy"
+        },
+        "neutral": {
+          "calm": "Calm",
+          "focused": "Focused",
+          "content": "Content",
+          "relaxed": "Relaxed"
+        },
+        "bad": {
+          "anxious": "Anxious",
+          "sad": "Sad",
+          "angry": "Angry",
+          "tired": "Tired",
+          "stressed": "Stressed"
+        }
+      }
+    },
+    "description": {
+      "label": "What's on your mind?",
+      "placeholder": "Write your thoughts here..."
+    },
+    "behavioralActivation": {
+      "label": "What would you like to do tomorrow?",
+      "placeholder": "Enter your planned action...",
+      "date": "When would you like to do this?",
+      "done": "I did it!"
+    }
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "system": "System"
+  },
+  "navigation": {
+    "home": "Home",
+    "profile": "Profile",
+    "settings": "Settings"
+  }
+}

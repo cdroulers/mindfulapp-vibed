@@ -1,16 +1,10 @@
-export type PrimaryMood = "Good" | "Neutral" | "Bad";
-
-export type SecondaryMood = {
-  Good: string[];
-  Neutral: string[];
-  Bad: string[];
-};
+export type PrimaryMood = "good" | "neutral" | "bad";
 
 export interface JournalEntry {
   id: string;
   date: string;
   primaryMood: PrimaryMood;
-  secondaryMood: string;
+  secondaryMoods: string[];
   description: string;
   behavioralActivation: {
     text: string;

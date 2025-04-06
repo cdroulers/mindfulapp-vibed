@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Application Mindfulness",
+    "theme": {
+      "toggle": "Changer le thème (Clair/Sombre/Auto)"
+    }
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer"
+  },
+  "journal": {
+    "create": "Créer une nouvelle entrée",
+    "edit": "Modifier l'entrée",
+    "mood": {
+      "primary": {
+        "label": "Comment vous sentez-vous ?",
+        "good": "Bien",
+        "neutral": "Neutre",
+        "bad": "Mal"
+      },
+      "secondary": {
+        "good": {
+          "excited": "Excité",
+          "energetic": "Énergique",
+          "joyful": "Joyeux",
+          "proud": "Fier",
+          "happy": "Heureux"
+        },
+        "neutral": {
+          "calm": "Calme",
+          "focused": "Concentré",
+          "content": "Satisfait",
+          "relaxed": "Détendu"
+        },
+        "bad": {
+          "anxious": "Anxieux",
+          "sad": "Triste",
+          "angry": "En colère",
+          "tired": "Fatigué",
+          "stressed": "Stressé"
+        }
+      }
+    },
+    "description": {
+      "label": "À quoi pensez-vous ?",
+      "placeholder": "Écrivez vos pensées ici..."
+    },
+    "behavioralActivation": {
+      "label": "Que souhaitez-vous faire demain ?",
+      "placeholder": "Entrez votre action prévue...",
+      "date": "Quand souhaitez-vous le faire ?",
+      "done": "Je l'ai fait !"
+    }
+  },
+  "theme": {
+    "light": "Mode clair",
+    "dark": "Mode sombre",
+    "system": "Système"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "profile": "Profil",
+    "settings": "Paramètres"
+  }
+}
