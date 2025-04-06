@@ -3,18 +3,17 @@ import { Notifications } from "@mantine/notifications";
 import { DatesProvider } from "@mantine/dates";
 import "dayjs/locale/en";
 
+import { AppContent } from "./components/AppContent";
+
 function App() {
   return (
-    <MantineProvider
-      theme={{
-        primaryColor: "blue",
-      }}>
+    <MantineProvider defaultColorScheme="auto" theme={{ primaryColor: "blue" }}>
       <DatesProvider settings={{ locale: "en" }}>
         <Notifications />
-        <div>Daily Journal App</div>
+        <AppContent />
       </DatesProvider>
     </MantineProvider>
   );
 }
 
-export default App;
+export { App };

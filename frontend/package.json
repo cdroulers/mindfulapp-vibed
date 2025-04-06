@@ -27,6 +27,7 @@
     "@mantine/form": "7.17.3",
     "@mantine/hooks": "7.17.3",
     "@mantine/notifications": "7.17.3",
+    "@tabler/icons-react": "^3.31.0",
     "date-fns": "4.1.0",
     "dayjs": "1.11.13",
     "pouchdb": "9.0.0",
