@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { AppContent } from "./AppContent";
 import { MantineProvider, createTheme } from "@mantine/core";
+import { I18nextProvider } from "react-i18next";
+import testI18n from "../i18n/testConfig";
 
 describe("AppContent", () => {
   const theme = createTheme({});
@@ -9,7 +11,9 @@ describe("AppContent", () => {
   const renderAppContent = () => {
     return render(
       <MantineProvider theme={theme} defaultColorScheme="auto">
-        <AppContent />
+        <I18nextProvider i18n={testI18n}>
+          <AppContent />
+        </I18nextProvider>
       </MantineProvider>
     );
   };
@@ -56,5 +60,10 @@ describe("AppContent", () => {
   it("renders the main content area", () => {
     renderAppContent();
     expect(screen.getByText("App Content Area")).toBeInTheDocument();
+  });
+
+  it("renders the hamburger menu", () => {
+    renderAppContent();
+    expect(screen.getByLabelText("Open menu")).toBeInTheDocument();
   });
 });

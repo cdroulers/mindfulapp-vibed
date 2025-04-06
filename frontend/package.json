@@ -31,10 +31,13 @@
     "@tabler/icons-react": "^3.31.0",
     "date-fns": "4.1.0",
     "dayjs": "1.11.13",
+    "i18next": "^24.2.3",
+    "i18next-browser-languagedetector": "^8.0.4",
     "pouchdb": "9.0.0",
     "pouchdb-browser": "9.0.0",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-i18next": "^15.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",

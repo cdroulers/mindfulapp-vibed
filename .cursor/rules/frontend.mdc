@@ -11,11 +11,16 @@ alwaysApply: true
 
 ## Unit tests
 
+Jest files (*.test.ts or *.test.tsx)
+
 - Make sure to add unit tests with @testing-library/react.
 - Use `userEvent` for actions.
 - Avoid jest mocking if possible.
+- Always put test files in a `__tests__` folder beside its respective file.
 
 ## e2e tests
+
+Playwright files (*.spec.ts)
 
 - Use Playwright for end-to-end tests
 - Use `npm run test:e2e:agent` as the base command when running the tests.
