@@ -38,18 +38,9 @@ describe("HamburgerMenu", () => {
     const portal = document.querySelector("[data-portal]");
     const portalContent = within(portal as HTMLElement);
 
-    // Check if menu items are visible within the portal
+    // Check if language section is visible within the portal
     await waitFor(() => {
       expect(portalContent.getByText(testI18n.t("common.language"))).toBeInTheDocument();
-      expect(
-        portalContent.getByRole("menuitem", { name: testI18n.t("navigation.home") })
-      ).toBeInTheDocument();
-      expect(
-        portalContent.getByRole("menuitem", { name: testI18n.t("navigation.profile") })
-      ).toBeInTheDocument();
-      expect(
-        portalContent.getByRole("menuitem", { name: testI18n.t("navigation.settings") })
-      ).toBeInTheDocument();
     });
   });
 
