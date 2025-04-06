@@ -3,7 +3,8 @@
     "title": "Mindful App",
     "theme": {
       "toggle": "Toggle color scheme (Light/Dark/Auto)"
-    }
+    },
+    "content": "App Content Area"
   },
   "common": {
     "save": "Save",
@@ -12,7 +13,8 @@
     "delete": "Delete",
     "loading": "Loading...",
     "error": "An error occurred",
-    "retry": "Retry"
+    "retry": "Retry",
+    "language": "Language"
   },
   "journal": {
     "create": "Create New Entry",

@@ -3,7 +3,8 @@
     "title": "Application Mindfulness",
     "theme": {
       "toggle": "Changer le thème (Clair/Sombre/Auto)"
-    }
+    },
+    "content": "Zone de contenu de l'application"
   },
   "common": {
     "save": "Enregistrer",
@@ -12,7 +13,8 @@
     "delete": "Supprimer",
     "loading": "Chargement...",
     "error": "Une erreur est survenue",
-    "retry": "Réessayer"
+    "retry": "Réessayer",
+    "language": "Langue"
   },
   "journal": {
     "create": "Créer une nouvelle entrée",

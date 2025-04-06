@@ -1,29 +1,42 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { LanguageSwitcher } from "../LanguageSwitcher";
 import { I18nextProvider } from "react-i18next";
-import i18n from "../../i18n/config";
+import { MantineProvider } from "@mantine/core";
+import testI18n from "../../i18n/testConfig";
 
 describe("LanguageSwitcher", () => {
   it("renders language options", () => {
     render(
-      <I18nextProvider i18n={i18n}>
-        <LanguageSwitcher />
-      </I18nextProvider>
+      <MantineProvider>
+        <I18nextProvider i18n={testI18n}>
+          <LanguageSwitcher />
+        </I18nextProvider>
+      </MantineProvider>
     );
 
-    expect(screen.getByRole("combobox")).toBeInTheDocument();
+    // The Select component renders as a textbox with aria-haspopup="listbox"
+    const select = screen.getByRole("textbox", { name: "" });
+    expect(select).toBeInTheDocument();
+    expect(select).toHaveValue("English");
   });
 
   it("changes language when a new option is selected", () => {
     render(
-      <I18nextProvider i18n={i18n}>
-        <LanguageSwitcher />
-      </I18nextProvider>
+      <MantineProvider>
+        <I18nextProvider i18n={testI18n}>
+          <LanguageSwitcher />
+        </I18nextProvider>
+      </MantineProvider>
     );
 
-    const select = screen.getByRole("combobox");
-    fireEvent.change(select, { target: { value: "fr" } });
+    // Click the select to open it
+    const select = screen.getByRole("textbox", { name: "" });
+    fireEvent.click(select);
 
-    expect(i18n.language).toBe("fr");
+    // Find and click the French option
+    const frenchOption = screen.getByRole("option", { name: "Français" });
+    fireEvent.click(frenchOption);
+
+    expect(testI18n.language).toBe("fr");
   });
 });
