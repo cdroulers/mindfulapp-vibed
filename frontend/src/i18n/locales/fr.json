@@ -19,6 +19,7 @@
   "journal": {
     "create": "Créer une nouvelle entrée",
     "edit": "Modifier l'entrée",
+    "addEntry": "Ajouter une entrée",
     "mood": {
       "primary": {
         "label": "Comment vous sentez-vous ?",

@@ -19,6 +19,7 @@
   "journal": {
     "create": "Create New Entry",
     "edit": "Edit Entry",
+    "addEntry": "Add Entry",
     "mood": {
       "primary": {
         "label": "How are you feeling?",
