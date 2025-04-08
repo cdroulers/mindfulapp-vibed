@@ -1,49 +1,74 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { AddEntryModal } from "../AddEntryModal";
-import { I18nextProvider } from "react-i18next";
 import { MantineProvider } from "@mantine/core";
-import testI18n from "../../i18n/testConfig";
+import { I18nextProvider } from "react-i18next";
+import i18n from "../../i18n/testConfig";
 
-interface AddEntryModalProps {
-  opened: boolean;
-  onClose: () => void;
-}
+// Helper function to render with MantineProvider and i18next
+const renderWithProviders = (ui: React.ReactElement) => {
+  return render(
+    <I18nextProvider i18n={i18n}>
+      <MantineProvider>{ui}</MantineProvider>
+    </I18nextProvider>
+  );
+};
 
 describe("AddEntryModal", () => {
-  const renderAddEntryModal = (props: Partial<AddEntryModalProps> = {}) => {
-    return render(
-      <MantineProvider>
-        <I18nextProvider i18n={testI18n}>
-          <AddEntryModal opened={true} onClose={() => {}} {...props} />
-        </I18nextProvider>
-      </MantineProvider>
-    );
-  };
+  const mockOnClose = jest.fn();
 
-  it("renders when opened", () => {
-    const onClose = jest.fn();
-    renderAddEntryModal({ onClose });
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
+  it("renders the modal with primary mood selection", () => {
+    renderWithProviders(<AddEntryModal opened={true} onClose={mockOnClose} />);
+
+    // Check if the modal title is rendered
     expect(screen.getByText("Add Entry")).toBeInTheDocument();
-    expect(screen.getByText("Add Entry Modal Content (to be implemented)")).toBeInTheDocument();
+
+    // Check if the primary mood label is rendered
+    expect(screen.getByText("journal.primaryMood")).toBeInTheDocument();
+
+    // Check if all mood options are rendered
+    expect(screen.getByText("journal.moods.good")).toBeInTheDocument();
+    expect(screen.getByText("journal.moods.neutral")).toBeInTheDocument();
+    expect(screen.getByText("journal.moods.bad")).toBeInTheDocument();
+
+    // Check if buttons are rendered
     expect(screen.getByText("Cancel")).toBeInTheDocument();
     expect(screen.getByText("Save")).toBeInTheDocument();
   });
 
-  it("calls onClose when cancel button is clicked", async () => {
-    const onClose = jest.fn();
-    renderAddEntryModal({ onClose });
+  it("allows selecting different primary moods", async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<AddEntryModal opened={true} onClose={mockOnClose} />);
 
-    await userEvent.click(screen.getByText("Cancel"));
-    expect(onClose).toHaveBeenCalledTimes(1);
+    // Initially, "Neutral" should be selected (default value)
+    const neutralOption = screen.getByRole("radio", { name: "journal.moods.neutral" });
+    expect(neutralOption).toBeChecked();
+
+    // Select "Good" mood
+    const goodOption = screen.getByRole("radio", { name: "journal.moods.good" });
+    await user.click(goodOption);
+    expect(goodOption).toBeChecked();
+    expect(neutralOption).not.toBeChecked();
+
+    // Select "Bad" mood
+    const badOption = screen.getByRole("radio", { name: "journal.moods.bad" });
+    await user.click(badOption);
+    expect(badOption).toBeChecked();
+    expect(goodOption).not.toBeChecked();
   });
 
-  it("calls onClose when save button is clicked", async () => {
-    const onClose = jest.fn();
-    renderAddEntryModal({ onClose });
+  it("calls onClose when cancel button is clicked", async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<AddEntryModal opened={true} onClose={mockOnClose} />);
 
-    await userEvent.click(screen.getByText("Save"));
-    expect(onClose).toHaveBeenCalledTimes(1);
+    const cancelButton = screen.getByText("Cancel");
+    await user.click(cancelButton);
+
+    expect(mockOnClose).toHaveBeenCalledTimes(1);
   });
 });

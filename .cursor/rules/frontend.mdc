@@ -22,6 +22,7 @@ Jest files (*.test.ts or *.test.tsx)
 - Make sure to add unit tests with @testing-library/react.
 - Use `userEvent` for actions.
 - Avoid jest mocking if possible.
+- Never mock `react-i18next`.
 - Always put test files in a `__tests__` folder beside its respective file.
 
 ## e2e tests
